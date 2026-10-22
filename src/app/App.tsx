@@ -4,6 +4,7 @@ import { HomePage } from '../pages/HomePage'
 import { ResultPage } from '../pages/ResultPage'
 import { ReviewPage } from '../pages/ReviewPage'
 import { StatsPage } from '../pages/StatsPage'
+import { useAndroidBackButton } from '../platform/useAndroidBackButton'
 import type { BattleConfig } from '../types/battle'
 import type { Screen } from '../types/screen'
 import { useProgress } from './ProgressContext'
@@ -33,6 +34,23 @@ function Screens() {
   }, [screen])
 
   const goHome = () => setScreen({ name: 'home' })
+
+  // Android の戻るボタン：ホームならアプリを閉じ、それ以外は前の画面へ
+  useAndroidBackButton(() => {
+    switch (screen.name) {
+      case 'home':
+        return false
+      case 'battle':
+        if (window.confirm('バトルをやめてホームに戻りますか？（記録は残りません）')) goHome()
+        return true
+      case 'review':
+        setScreen({ ...screen, name: 'result' })
+        return true
+      default:
+        goHome()
+        return true
+    }
+  })
   // key を毎回変えて、同じ設定での「もう一度」でもバトルを作り直す
   const startBattle = (config: BattleConfig) => setScreen({ name: 'battle', config, key: Date.now() })
 

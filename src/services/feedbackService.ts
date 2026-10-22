@@ -1,3 +1,6 @@
+import { Haptics, ImpactStyle, NotificationType } from '@capacitor/haptics'
+import { isNativeApp } from '../platform/native'
+
 /**
  * 効果音とバイブレーション。
  *
@@ -60,10 +63,23 @@ const VIBRATIONS: Partial<Record<SoundKind, number | number[]>> = {
   levelup: [40, 30, 40, 30, 80],
 }
 
-/** バイブレーション（Android のブラウザ・アプリで有効。iOS Safari は非対応）。 */
+/** アプリ版（Capacitor）の触覚フィードバック。iPhone でも振動する。 */
+function nativeHaptics(kind: SoundKind): void {
+  if (kind === 'wrong') void Haptics.notification({ type: NotificationType.Error })
+  else if (kind === 'gameover') void Haptics.notification({ type: NotificationType.Warning })
+  else if (kind === 'levelup') void Haptics.notification({ type: NotificationType.Success })
+  else if (kind === 'combo') void Haptics.impact({ style: ImpactStyle.Light })
+}
+
+/** バイブレーション（Web は Android のみ対応。アプリ版は Android / iOS とも対応）。 */
 export function vibrate(kind: SoundKind, enabled: boolean): void {
+  if (!enabled) return
+  if (isNativeApp) {
+    nativeHaptics(kind)
+    return
+  }
   const pattern = VIBRATIONS[kind]
-  if (!enabled || !pattern || typeof navigator === 'undefined' || !('vibrate' in navigator)) return
+  if (!pattern || typeof navigator === 'undefined' || !('vibrate' in navigator)) return
   navigator.vibrate(pattern)
 }
 

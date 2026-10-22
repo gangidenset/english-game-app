@@ -7,6 +7,7 @@ import { APP_CONFIG } from '../config/app'
 import { getMissionStatuses, missionTitle } from '../services/missionService'
 import { getAccuracy, getActiveStreak } from '../services/progressService'
 import type { BattleConfig } from '../types/battle'
+import { isNativeApp } from '../platform/native'
 import { UpdatePrompt } from '../pwa/UpdatePrompt'
 import { getLevelInfo } from '../utils/level'
 
@@ -102,7 +103,8 @@ export function HomePage({ onStartBattle, onOpenStats }: Props) {
           {APP_CONFIG.name} v{APP_CONFIG.version}
         </p>
       </div>
-      <UpdatePrompt />
+      {/* アプリ版はストア経由で更新するので Service Worker は使わない */}
+      {!isNativeApp && <UpdatePrompt />}
     </main>
   )
 }
