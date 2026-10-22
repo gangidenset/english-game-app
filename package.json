@@ -18,7 +18,8 @@
     "generate:icons": "pwa-assets-generator --config pwa-assets.config.ts",
     "cap:sync": "npm run build && cap sync",
     "cap:android": "npm run build && cap sync android && cap open android",
-    "cap:ios": "npm run build && cap sync ios && cap open ios"
+    "cap:ios": "npm run build && cap sync ios && cap open ios",
+    "generate:native-assets": "node scripts/generate-native-assets.mjs && npx -y @capacitor/assets@3.0.5 generate --android --ios --iconBackgroundColor '#1e1b4b' --splashBackgroundColor '#0f0d2e' --splashBackgroundColorDark '#0f0d2e'"
   },
   "dependencies": {
     "@capacitor/android": "^8.5.3",
