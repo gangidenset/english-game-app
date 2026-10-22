@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { BattlePage } from '../pages/BattlePage'
 import { HomePage } from '../pages/HomePage'
 import { ResultPage } from '../pages/ResultPage'
+import { ReviewPage } from '../pages/ReviewPage'
 import type { BattleConfig } from '../types/battle'
 import type { Screen } from '../types/screen'
 import { ProgressProvider } from './ProgressProvider'
@@ -12,6 +13,11 @@ import { ProgressProvider } from './ProgressProvider'
  */
 export function App() {
   const [screen, setScreen] = useState<Screen>({ name: 'home' })
+  // 画面が切り替わったら先頭までスクロール
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [screen])
+
   const goHome = () => setScreen({ name: 'home' })
   // key を毎回変えて、同じ設定での「もう一度」でもバトルを作り直す
   const startBattle = (config: BattleConfig) => setScreen({ name: 'battle', config, key: Date.now() })
@@ -34,8 +40,15 @@ export function App() {
           <ResultPage
             result={screen.result}
             onRetry={() => startBattle(screen.result.config)}
-            onReview={goHome}
+            onReview={() => setScreen({ name: 'review', result: screen.result })}
             onHome={goHome}
+          />
+        )}
+        {screen.name === 'review' && (
+          <ReviewPage
+            result={screen.result}
+            onRetry={(questionIds) => startBattle({ mode: 'retry', questionIds })}
+            onBack={() => setScreen({ name: 'result', result: screen.result })}
           />
         )}
         {screen.name === 'stats' && (

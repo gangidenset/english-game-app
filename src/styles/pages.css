@@ -251,3 +251,60 @@
   color: var(--color-text);
   font-variant-numeric: tabular-nums;
 }
+
+/* ---------- REVIEW ---------- */
+.review__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.review-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.review-item__prompt {
+  font-weight: 700;
+  font-size: 1.0625rem;
+  white-space: pre-wrap;
+  -webkit-user-select: text;
+  user-select: text;
+}
+.review-item__row {
+  display: flex;
+  gap: var(--space-3);
+  font-weight: 700;
+}
+.review-item__row span {
+  flex: none;
+  width: 6.5em;
+  color: var(--color-text-sub);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding-top: 2px;
+}
+.review-item__row--wrong {
+  color: #fca5a5;
+}
+.review-item__row--correct {
+  color: #86efac;
+}
+.review-item__explanation {
+  padding: var(--space-3);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-2);
+  font-size: 0.9375rem;
+  -webkit-user-select: text;
+  user-select: text;
+}
+/* 長いリストでも操作ボタンを画面下に固定する */
+.review__footer {
+  position: sticky;
+  bottom: 0;
+  padding: var(--space-3) 0 env(safe-area-inset-bottom);
+  margin-bottom: calc(-1 * env(safe-area-inset-bottom));
+  background: linear-gradient(transparent, var(--color-bg) 30%);
+}

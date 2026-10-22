@@ -9,4 +9,5 @@ export type Screen =
   | { name: 'home' }
   | { name: 'battle'; config: BattleConfig; key: number }
   | { name: 'result'; result: BattleResult }
+  | { name: 'review'; result: BattleResult }
   | { name: 'stats' }
