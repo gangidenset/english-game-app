@@ -14,6 +14,7 @@ import {
   lastAnswer,
   type BattleState,
 } from '../game/battleReducer'
+import { comboMultiplier } from '../game/scoring'
 import { useCountdown } from '../hooks/useCountdown'
 import { loadAllQuestions, selectQuestions } from '../services/questionService'
 import type { BattleConfig } from '../types/battle'
@@ -127,6 +128,18 @@ function BattleRunner({
       />
       <ProgressBar value={state.index + (answer ? 1 : 0)} max={state.questions.length} height={6} />
       <TimerBar remainingMs={remainingMs} totalMs={BATTLE.timePerQuestionMs} />
+      <div className="hud">
+        <span className="hud__score" aria-label="スコア">
+          {state.score.toLocaleString()}
+          <small>pt</small>
+        </span>
+        {state.combo >= 2 && (
+          <span key={state.combo} className="hud__combo">
+            🔥 {state.combo} COMBO
+            <small>×{comboMultiplier(state.combo).toFixed(1)}</small>
+          </span>
+        )}
+      </div>
 
       <Card className="battle__question">
         <span className="battle__category">{CATEGORY_LABELS[current.source.category]}</span>
@@ -152,6 +165,7 @@ function BattleRunner({
         <div className={answer.correct ? 'feedback feedback--correct' : 'feedback feedback--wrong'}>
           <p className="feedback__title">
             {answer.correct ? '⭕ 正解！' : answer.selectedIndex === null ? '⏰ 時間切れ！' : '❌ ざんねん…'}
+            {answer.correct && <span className="feedback__points">+{answer.points}</span>}
           </p>
           {!answer.correct && (
             <>

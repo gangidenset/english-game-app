@@ -1,5 +1,6 @@
 import { BATTLE } from '../config/game'
 import type { BattleQuestion } from '../types/question'
+import { calcAnswerScore } from './scoring'
 
 /**
  * バトルの進行ロジック（純粋関数の reducer）。
@@ -14,6 +15,10 @@ export interface AnswerRecord {
   correct: boolean
   /** 回答にかかった時間 */
   timeMs: number
+  /** この回答で得た点数 */
+  points: number
+  /** この回答時点のコンボ数（不正解なら 0） */
+  combo: number
 }
 
 export type BattlePhase = 'answering' | 'feedback' | 'finished'
@@ -24,6 +29,9 @@ export interface BattleState {
   phase: BattlePhase
   answers: AnswerRecord[]
   lives: number
+  score: number
+  combo: number
+  maxCombo: number
   /** ライフが 0 になって終了した */
   gameOver: boolean
   /** 途中でやめた */
@@ -43,20 +51,28 @@ export function createBattleState(questions: BattleQuestion[], maxLives: number 
     phase: questions.length > 0 ? 'answering' : 'finished',
     answers: [],
     lives: maxLives,
+    score: 0,
+    combo: 0,
+    maxCombo: 0,
     gameOver: false,
     quit: false,
   }
 }
 
-/** 回答（時間切れ含む）を記録し、ライフを更新する。 */
+/** 回答（時間切れ含む）を記録し、ライフ・スコア・コンボを更新する。 */
 function recordAnswer(state: BattleState, selectedIndex: number | null, elapsedMs: number): BattleState {
   const question = state.questions[state.index]
   const correct = selectedIndex === question.answerIndex
+  const combo = correct ? state.combo + 1 : 0
+  const points = correct ? calcAnswerScore(elapsedMs, combo) : 0
   return {
     ...state,
     phase: 'feedback',
     lives: correct ? state.lives : Math.max(0, state.lives - 1),
-    answers: [...state.answers, { question, selectedIndex, correct, timeMs: elapsedMs }],
+    score: state.score + points,
+    combo,
+    maxCombo: Math.max(state.maxCombo, combo),
+    answers: [...state.answers, { question, selectedIndex, correct, timeMs: elapsedMs, points, combo }],
   }
 }
 
