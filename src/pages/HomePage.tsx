@@ -7,6 +7,7 @@ import { APP_CONFIG } from '../config/app'
 import { getMissionStatuses, missionTitle } from '../services/missionService'
 import { getAccuracy, getActiveStreak } from '../services/progressService'
 import type { BattleConfig } from '../types/battle'
+import { UpdatePrompt } from '../pwa/UpdatePrompt'
 import { getLevelInfo } from '../utils/level'
 
 interface Props {
@@ -101,6 +102,7 @@ export function HomePage({ onStartBattle, onOpenStats }: Props) {
           {APP_CONFIG.name} v{APP_CONFIG.version}
         </p>
       </div>
+      <UpdatePrompt />
     </main>
   )
 }
