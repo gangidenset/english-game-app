@@ -3,9 +3,13 @@ import { Card } from '../components/Card'
 import { RankBadge } from '../components/RankBadge'
 import { StatTile } from '../components/StatTile'
 import { wrongAnswers, type BattleResult } from '../game/result'
+import { missionTitle } from '../services/missionService'
+import type { BattleOutcome } from '../services/progressService'
+import { getLevelTitle } from '../utils/level'
 
 interface Props {
   result: BattleResult
+  outcome: BattleOutcome
   onRetry: () => void
   onReview: () => void
   onHome: () => void
@@ -20,7 +24,7 @@ const RANK_MESSAGES = {
 } as const
 
 /** RESULT 画面：正解数・正答率・スコア・最大コンボ・ランク・獲得 XP。 */
-export function ResultPage({ result, onRetry, onReview, onHome }: Props) {
+export function ResultPage({ result, outcome, onRetry, onReview, onHome }: Props) {
   const wrongCount = wrongAnswers(result).length
 
   return (
@@ -42,7 +46,7 @@ export function ResultPage({ result, onRetry, onReview, onHome }: Props) {
 
       <Card className="xp-card">
         <p className="xp-card__total">
-          獲得 XP <strong>+{result.xp.total}</strong>
+          獲得 XP <strong>+{outcome.xpGained}</strong>
         </p>
         <ul className="xp-card__list">
           <li>
@@ -61,8 +65,22 @@ export function ResultPage({ result, onRetry, onReview, onHome }: Props) {
               パーフェクトボーナス <span>+{result.xp.perfect}</span>
             </li>
           )}
+          {outcome.completedMissions.map((m) => (
+            <li key={m.id}>
+              🎯 ミッション「{missionTitle(m)}」 <span>+{m.rewardXp}</span>
+            </li>
+          ))}
         </ul>
       </Card>
+
+      {outcome.levelAfter > outcome.levelBefore && (
+        <Card className="levelup" role="status">
+          <p className="levelup__title">⬆️ LEVEL UP!</p>
+          <p>
+            Lv.{outcome.levelBefore} → <strong>Lv.{outcome.levelAfter}</strong>　{getLevelTitle(outcome.levelAfter)}
+          </p>
+        </Card>
+      )}
 
       <div className="page-footer">
         {wrongCount > 0 && (

@@ -1,4 +1,5 @@
 import type { BattleResult } from '../game/result'
+import type { BattleOutcome } from '../services/progressService'
 import type { BattleConfig } from './battle'
 
 /**
@@ -8,6 +9,6 @@ import type { BattleConfig } from './battle'
 export type Screen =
   | { name: 'home' }
   | { name: 'battle'; config: BattleConfig; key: number }
-  | { name: 'result'; result: BattleResult }
-  | { name: 'review'; result: BattleResult }
+  | { name: 'result'; result: BattleResult; outcome: BattleOutcome }
+  | { name: 'review'; result: BattleResult; outcome: BattleOutcome }
   | { name: 'stats' }

@@ -1,10 +1,15 @@
 import { createContext, useContext } from 'react'
-import type { PlayerProgress } from '../types/progress'
+import type { BattleResult } from '../game/result'
+import type { BattleOutcome } from '../services/progressService'
+import type { PlayerProgress, PlayerSettings } from '../types/progress'
 
 export interface ProgressContextValue {
   progress: PlayerProgress
-  /** 学習データを更新する（保存は Provider 側で行う） */
-  updateProgress: (updater: (prev: PlayerProgress) => PlayerProgress) => void
+  /** バトル結果を学習データに反映して保存し、反映結果（レベルアップ等）を返す */
+  commitBattle: (result: BattleResult) => BattleOutcome
+  updateSettings: (patch: Partial<PlayerSettings>) => void
+  /** 学習データをすべて消去する */
+  resetProgress: () => Promise<void>
 }
 
 export const ProgressContext = createContext<ProgressContextValue | null>(null)
