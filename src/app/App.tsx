@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { BattlePage } from '../pages/BattlePage'
 import { HomePage } from '../pages/HomePage'
+import { ResultPage } from '../pages/ResultPage'
+import type { BattleConfig } from '../types/battle'
 import type { Screen } from '../types/screen'
 import { ProgressProvider } from './ProgressProvider'
 
@@ -11,18 +13,30 @@ import { ProgressProvider } from './ProgressProvider'
 export function App() {
   const [screen, setScreen] = useState<Screen>({ name: 'home' })
   const goHome = () => setScreen({ name: 'home' })
+  // key を毎回変えて、同じ設定での「もう一度」でもバトルを作り直す
+  const startBattle = (config: BattleConfig) => setScreen({ name: 'battle', config, key: Date.now() })
 
   return (
     <ProgressProvider>
       <div className="app-shell">
         {screen.name === 'home' && (
-          <HomePage
-            onStartBattle={(config) => setScreen({ name: 'battle', config })}
-            onOpenStats={() => setScreen({ name: 'stats' })}
-          />
+          <HomePage onStartBattle={startBattle} onOpenStats={() => setScreen({ name: 'stats' })} />
         )}
         {screen.name === 'battle' && (
-          <BattlePage config={screen.config} onFinish={goHome} onQuit={goHome} />
+          <BattlePage
+            key={screen.key}
+            config={screen.config}
+            onFinish={(result) => setScreen({ name: 'result', result })}
+            onQuit={goHome}
+          />
+        )}
+        {screen.name === 'result' && (
+          <ResultPage
+            result={screen.result}
+            onRetry={() => startBattle(screen.result.config)}
+            onReview={goHome}
+            onHome={goHome}
+          />
         )}
         {screen.name === 'stats' && (
           <main className="page page--center">

@@ -17,12 +17,13 @@ import {
 import { comboMultiplier } from '../game/scoring'
 import { useCountdown } from '../hooks/useCountdown'
 import { loadAllQuestions, selectQuestions } from '../services/questionService'
+import { buildBattleResult, type BattleResult } from '../game/result'
 import type { BattleConfig } from '../types/battle'
 import { CATEGORY_LABELS, type BattleQuestion } from '../types/question'
 
 interface Props {
   config: BattleConfig
-  onFinish: (state: BattleState) => void
+  onFinish: (result: BattleResult) => void
   onQuit: () => void
 }
 
@@ -64,7 +65,13 @@ export function BattlePage({ config, onFinish, onQuit }: Props) {
       </main>
     )
   }
-  return <BattleRunner questions={questions} onFinish={onFinish} onQuit={onQuit} />
+  return (
+    <BattleRunner
+      questions={questions}
+      onFinish={(state, durationMs) => onFinish(buildBattleResult(state, config, durationMs))}
+      onQuit={onQuit}
+    />
+  )
 }
 
 function BattleRunner({
@@ -73,11 +80,15 @@ function BattleRunner({
   onQuit,
 }: {
   questions: BattleQuestion[]
-  onFinish: (state: BattleState) => void
+  onFinish: (state: BattleState, durationMs: number) => void
   onQuit: () => void
 }) {
   const [state, dispatch] = useReducer(battleReducer, questions, createBattleState)
   const reported = useRef(false)
+  const startedAt = useRef(0)
+  useEffect(() => {
+    startedAt.current = performance.now()
+  }, [])
   const current = state.questions[state.index]
   const answer = state.phase === 'feedback' ? lastAnswer(state) : undefined
 
@@ -100,7 +111,7 @@ function BattleRunner({
   useEffect(() => {
     if (state.phase === 'finished' && !reported.current) {
       reported.current = true
-      onFinish(state)
+      onFinish(state, performance.now() - startedAt.current)
     }
   }, [state, onFinish])
 
