@@ -1,7 +1,9 @@
-import { useEffect, useReducer, useRef, useState } from 'react'
+import { useCallback, useEffect, useReducer, useRef, useState } from 'react'
 import { useProgress } from '../app/ProgressContext'
 import { Button } from '../components/Button'
 import { Card } from '../components/Card'
+import { Lives } from '../components/Lives'
+import { TimerBar } from '../components/TimerBar'
 import { ChoiceButton, type ChoiceState } from '../components/ChoiceButton'
 import { ProgressBar } from '../components/ProgressBar'
 import { TopBar } from '../components/TopBar'
@@ -12,6 +14,7 @@ import {
   lastAnswer,
   type BattleState,
 } from '../game/battleReducer'
+import { useCountdown } from '../hooks/useCountdown'
 import { loadAllQuestions, selectQuestions } from '../services/questionService'
 import type { BattleConfig } from '../types/battle'
 import { CATEGORY_LABELS, type BattleQuestion } from '../types/question'
@@ -73,15 +76,17 @@ function BattleRunner({
   onQuit: () => void
 }) {
   const [state, dispatch] = useReducer(battleReducer, questions, createBattleState)
-  const startedAt = useRef(0)
   const reported = useRef(false)
   const current = state.questions[state.index]
   const answer = state.phase === 'feedback' ? lastAnswer(state) : undefined
 
-  // 問題が切り替わったら計測をリセット
-  useEffect(() => {
-    if (state.phase === 'answering') startedAt.current = performance.now()
-  }, [state.index, state.phase])
+  const onExpire = useCallback(() => dispatch({ type: 'timeout', elapsedMs: BATTLE.timePerQuestionMs }), [])
+  const { remainingMs, getElapsedMs } = useCountdown(
+    BATTLE.timePerQuestionMs,
+    state.phase === 'answering',
+    state.index,
+    onExpire,
+  )
 
   // 正解なら自動で次へ。不正解は解説を読んでから「次へ」を押してもらう
   useEffect(() => {
@@ -118,8 +123,10 @@ function BattleRunner({
             {state.index + 1} / {state.questions.length}
           </span>
         }
+        right={<Lives lives={state.lives} max={BATTLE.maxLives} />}
       />
       <ProgressBar value={state.index + (answer ? 1 : 0)} max={state.questions.length} height={6} />
+      <TimerBar remainingMs={remainingMs} totalMs={BATTLE.timePerQuestionMs} />
 
       <Card className="battle__question">
         <span className="battle__category">{CATEGORY_LABELS[current.source.category]}</span>
@@ -135,7 +142,7 @@ function BattleRunner({
             state={choiceState(i)}
             disabled={state.phase !== 'answering'}
             onSelect={(choiceIndex) =>
-              dispatch({ type: 'answer', choiceIndex, elapsedMs: performance.now() - startedAt.current })
+              dispatch({ type: 'answer', choiceIndex, elapsedMs: getElapsedMs() })
             }
           />
         ))}
@@ -143,12 +150,18 @@ function BattleRunner({
 
       {answer && (
         <div className={answer.correct ? 'feedback feedback--correct' : 'feedback feedback--wrong'}>
-          <p className="feedback__title">{answer.correct ? '⭕ 正解！' : '❌ ざんねん…'}</p>
+          <p className="feedback__title">
+            {answer.correct ? '⭕ 正解！' : answer.selectedIndex === null ? '⏰ 時間切れ！' : '❌ ざんねん…'}
+          </p>
           {!answer.correct && (
             <>
-              <p className="feedback__text">{current.source.explanation}</p>
+              <p className="feedback__text">
+                正解：<strong>{current.choices[current.answerIndex]}</strong>
+                <br />
+                {current.source.explanation}
+              </p>
               <Button block onClick={() => dispatch({ type: 'next' })}>
-                次へ
+                {state.lives <= 0 ? '結果を見る' : '次へ'}
               </Button>
             </>
           )}

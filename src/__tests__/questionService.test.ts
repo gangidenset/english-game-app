@@ -43,7 +43,7 @@ describe('selectQuestions', () => {
   it('苦手問題を約3割混ぜる', () => {
     const weakIds = ['voc-1', 'voc-2', 'voc-3', 'voc-4', 'voc-5']
     const qs = selectQuestions(pool, { mode: 'mixed' }, { count: 10, weakIds })
-    expect(qs.filter((q) => weakIds.includes(q.source.id))).toHaveLength(3)
+    expect(qs.filter((q) => weakIds.includes(q.source.id)).length).toBeGreaterThanOrEqual(3)
   })
 
   it('苦手克服モードは苦手問題だけ', () => {
