@@ -90,6 +90,7 @@ function BattleRunner({
 }) {
   const [state, dispatch] = useReducer(battleReducer, questions, createBattleState)
   const reported = useRef(false)
+  const feedbackRef = useRef<HTMLDivElement>(null)
   const startedAt = useRef(0)
   useEffect(() => {
     startedAt.current = performance.now()
@@ -105,9 +106,10 @@ function BattleRunner({
     onExpire,
   )
 
-  // 回答したら効果音
+  // 回答したら効果音。小さい画面でも解説が見えるようにスクロール
   useEffect(() => {
     if (!answer) return
+    feedbackRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
     feedback(!answer.correct ? 'wrong' : answer.combo >= 3 ? 'combo' : 'correct', settings)
   }, [answer, settings])
 
@@ -184,7 +186,7 @@ function BattleRunner({
       </div>
 
       {answer && (
-        <div className={answer.correct ? 'feedback feedback--correct' : 'feedback feedback--wrong'}>
+        <div ref={feedbackRef} className={answer.correct ? 'feedback feedback--correct' : 'feedback feedback--wrong'}>
           <p className="feedback__title">
             {answer.correct ? '⭕ 正解！' : answer.selectedIndex === null ? '⏰ 時間切れ！' : '❌ ざんねん…'}
             {answer.correct && <span className="feedback__points">+{answer.points}</span>}
