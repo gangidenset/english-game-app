@@ -4,9 +4,381 @@
     "category": "phrases",
     "difficulty": 1,
     "prompt": "I'm looking (   ) my key. 「かぎを探しています」",
-    "choices": ["for", "at", "after", "into"],
-    "answerIndex": 0,
+    "choices": [
+      "at",
+      "for",
+      "after",
+      "into"
+    ],
+    "answerIndex": 1,
     "explanation": "look for ～ = ～を探す。look at は「～を見る」、look after は「～の世話をする」。",
-    "tags": ["熟語", "中1"]
+    "tags": [
+      "熟語",
+      "中1"
+    ]
+  },
+  {
+    "id": "phr-0002",
+    "category": "phrases",
+    "difficulty": 2,
+    "prompt": "I'm interested (   ) Japanese history.",
+    "choices": [
+      "in",
+      "at",
+      "on",
+      "with"
+    ],
+    "answerIndex": 0,
+    "explanation": "be interested in ～ =「～に興味がある」。",
+    "tags": [
+      "熟語",
+      "中2"
+    ]
+  },
+  {
+    "id": "phr-0003",
+    "category": "phrases",
+    "difficulty": 2,
+    "prompt": "Take care (   ) yourself. 「体に気をつけてね」",
+    "choices": [
+      "for",
+      "with",
+      "about",
+      "of"
+    ],
+    "answerIndex": 3,
+    "explanation": "take care of ～ =「～の世話をする、～を大事にする」。",
+    "tags": [
+      "熟語",
+      "中2"
+    ]
+  },
+  {
+    "id": "phr-0004",
+    "category": "phrases",
+    "difficulty": 2,
+    "prompt": "My sister (   ) our dog when I'm busy. 「世話をする」",
+    "choices": [
+      "looks for",
+      "looks at",
+      "looks after",
+      "looks like"
+    ],
+    "answerIndex": 2,
+    "explanation": "look after ～ =「～の世話をする」。look like は「～のように見える」。",
+    "tags": [
+      "熟語",
+      "中2"
+    ]
+  },
+  {
+    "id": "phr-0005",
+    "category": "phrases",
+    "difficulty": 3,
+    "prompt": "I'm looking forward to (   ) you.",
+    "choices": [
+      "see",
+      "seeing",
+      "saw",
+      "seen"
+    ],
+    "answerIndex": 1,
+    "explanation": "look forward to ～ing =「～するのを楽しみにする」。この to は前置詞なので後ろは -ing。",
+    "tags": [
+      "熟語",
+      "動名詞",
+      "中3",
+      "入試頻出"
+    ]
+  },
+  {
+    "id": "phr-0006",
+    "category": "phrases",
+    "difficulty": 1,
+    "prompt": "Don't give (   ). 「あきらめないで」",
+    "choices": [
+      "up",
+      "in",
+      "off",
+      "out"
+    ],
+    "answerIndex": 0,
+    "explanation": "give up =「あきらめる」。",
+    "tags": [
+      "熟語",
+      "中2"
+    ]
+  },
+  {
+    "id": "phr-0007",
+    "category": "phrases",
+    "difficulty": 2,
+    "prompt": "「ところで」を英語で言うと？",
+    "choices": [
+      "at last",
+      "for example",
+      "of course",
+      "by the way"
+    ],
+    "answerIndex": 3,
+    "explanation": "by the way = ところで。at last はついに、for example は例えば、of course はもちろん。",
+    "tags": [
+      "熟語",
+      "中2"
+    ]
+  },
+  {
+    "id": "phr-0008",
+    "category": "phrases",
+    "difficulty": 1,
+    "prompt": "「例えば」を英語で言うと？",
+    "choices": [
+      "at first",
+      "each other",
+      "for example",
+      "all over"
+    ],
+    "answerIndex": 2,
+    "explanation": "for example = 例えば。at first は最初は、each other はお互い。",
+    "tags": [
+      "熟語",
+      "中1"
+    ]
+  },
+  {
+    "id": "phr-0009",
+    "category": "phrases",
+    "difficulty": 1,
+    "prompt": "A: Thank you very much.\nB: (   )",
+    "choices": [
+      "Me, too.",
+      "You're welcome.",
+      "That's right.",
+      "Here you are."
+    ],
+    "answerIndex": 1,
+    "explanation": "お礼への返事は You're welcome.（どういたしまして）。",
+    "tags": [
+      "会話",
+      "中1"
+    ]
+  },
+  {
+    "id": "phr-0010",
+    "category": "phrases",
+    "difficulty": 2,
+    "prompt": "（お店で）A: May I help you?\nB: (   )",
+    "choices": [
+      "Yes, I'm looking for a jacket.",
+      "No, I don't help.",
+      "Yes, you are.",
+      "Sure, here you are."
+    ],
+    "answerIndex": 0,
+    "explanation": "May I help you? は店員の「いらっしゃいませ（何かお探しですか）」。探している物を伝える。",
+    "tags": [
+      "会話",
+      "中2"
+    ]
+  },
+  {
+    "id": "phr-0011",
+    "category": "phrases",
+    "difficulty": 1,
+    "prompt": "A: How about going to the movies?\nB: (   )",
+    "choices": [
+      "I'm fine, thank you.",
+      "You're welcome.",
+      "Nice to meet you.",
+      "That sounds good."
+    ],
+    "answerIndex": 3,
+    "explanation": "How about ～ing? は「～するのはどう？」という誘い。That sounds good.（いいね）で答える。",
+    "tags": [
+      "会話",
+      "中1"
+    ]
+  },
+  {
+    "id": "phr-0012",
+    "category": "phrases",
+    "difficulty": 1,
+    "prompt": "A: I have a cold.\nB: (   )",
+    "choices": [
+      "That's great.",
+      "Good job.",
+      "That's too bad.",
+      "Here you are."
+    ],
+    "answerIndex": 2,
+    "explanation": "「かぜをひいた」に対しては That's too bad.（お気の毒に）。",
+    "tags": [
+      "会話",
+      "中1"
+    ]
+  },
+  {
+    "id": "phr-0013",
+    "category": "phrases",
+    "difficulty": 1,
+    "prompt": "A: Can you help me?\nB: (   )",
+    "choices": [
+      "You're welcome.",
+      "Sure.",
+      "Me, too.",
+      "Here you are."
+    ],
+    "answerIndex": 1,
+    "explanation": "Can you ～? は「～してくれる？」という依頼。Sure.（いいよ）で答える。",
+    "tags": [
+      "会話",
+      "中1"
+    ]
+  },
+  {
+    "id": "phr-0014",
+    "category": "phrases",
+    "difficulty": 2,
+    "prompt": "A: Excuse me. How can I get to the station?\nB: (   )",
+    "choices": [
+      "Go straight and turn left at the second corner.",
+      "It's sunny today.",
+      "It's ten yen.",
+      "Yes, it's a station."
+    ],
+    "answerIndex": 0,
+    "explanation": "道案内。Go straight（まっすぐ行く）、turn left（左に曲がる）は入試の会話文の定番。",
+    "tags": [
+      "会話",
+      "道案内",
+      "中2"
+    ]
+  },
+  {
+    "id": "phr-0015",
+    "category": "phrases",
+    "difficulty": 2,
+    "prompt": "（電話で）A: May I speak to Ken?\nB: (   )",
+    "choices": [
+      "See you later.",
+      "You're welcome.",
+      "Help yourself.",
+      "Hold on, please."
+    ],
+    "answerIndex": 3,
+    "explanation": "電話で「少々お待ちください」は Hold on, please.",
+    "tags": [
+      "会話",
+      "電話",
+      "中2"
+    ]
+  },
+  {
+    "id": "phr-0016",
+    "category": "phrases",
+    "difficulty": 1,
+    "prompt": "I was late (   ) school. 「学校に遅刻した」",
+    "choices": [
+      "to",
+      "at",
+      "for",
+      "in"
+    ],
+    "answerIndex": 2,
+    "explanation": "be late for ～ =「～に遅れる」。",
+    "tags": [
+      "熟語",
+      "中1"
+    ]
+  },
+  {
+    "id": "phr-0017",
+    "category": "phrases",
+    "difficulty": 2,
+    "prompt": "The box is full (   ) toys.",
+    "choices": [
+      "with",
+      "of",
+      "in",
+      "for"
+    ],
+    "answerIndex": 1,
+    "explanation": "be full of ～ =「～でいっぱいだ」。be filled with ～ と同じ意味。",
+    "tags": [
+      "熟語",
+      "中2"
+    ]
+  },
+  {
+    "id": "phr-0018",
+    "category": "phrases",
+    "difficulty": 2,
+    "prompt": "We help each (   ). 「お互いに助け合う」",
+    "choices": [
+      "other",
+      "another",
+      "others",
+      "one"
+    ],
+    "answerIndex": 0,
+    "explanation": "each other =「お互いに」。",
+    "tags": [
+      "熟語",
+      "中2"
+    ]
+  },
+  {
+    "id": "phr-0019",
+    "category": "phrases",
+    "difficulty": 2,
+    "prompt": "My idea is different (   ) yours.",
+    "choices": [
+      "of",
+      "for",
+      "at",
+      "from"
+    ],
+    "answerIndex": 3,
+    "explanation": "be different from ～ =「～と違う」。",
+    "tags": [
+      "熟語",
+      "中2"
+    ]
+  },
+  {
+    "id": "phr-0020",
+    "category": "phrases",
+    "difficulty": 3,
+    "prompt": "Many students took part (   ) the event.",
+    "choices": [
+      "of",
+      "on",
+      "in",
+      "at"
+    ],
+    "answerIndex": 2,
+    "explanation": "take part in ～ =「～に参加する」（= join）。",
+    "tags": [
+      "熟語",
+      "中3"
+    ]
+  },
+  {
+    "id": "phr-0021",
+    "category": "phrases",
+    "difficulty": 3,
+    "prompt": "(   ) to your help, I finished my work.",
+    "choices": [
+      "Because",
+      "Thanks",
+      "Thank",
+      "Since"
+    ],
+    "answerIndex": 1,
+    "explanation": "thanks to ～ =「～のおかげで」。",
+    "tags": [
+      "熟語",
+      "中3"
+    ]
   }
 ]

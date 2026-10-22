@@ -4,9 +4,777 @@
     "category": "vocabulary",
     "difficulty": 1,
     "prompt": "「図書館」を英語で言うと？",
-    "choices": ["library", "hospital", "station", "museum"],
-    "answerIndex": 0,
+    "choices": [
+      "hospital",
+      "library",
+      "station",
+      "museum"
+    ],
+    "answerIndex": 1,
     "explanation": "library = 図書館。hospital は病院、station は駅、museum は博物館。",
-    "tags": ["名詞", "中1"]
+    "tags": [
+      "名詞",
+      "中1"
+    ]
+  },
+  {
+    "id": "voc-0002",
+    "category": "vocabulary",
+    "difficulty": 1,
+    "prompt": "「病院」を英語で言うと？",
+    "choices": [
+      "hospital",
+      "library",
+      "restaurant",
+      "factory"
+    ],
+    "answerIndex": 0,
+    "explanation": "hospital = 病院。restaurant はレストラン、factory は工場。",
+    "tags": [
+      "名詞",
+      "中1"
+    ]
+  },
+  {
+    "id": "voc-0003",
+    "category": "vocabulary",
+    "difficulty": 1,
+    "prompt": "dictionary の意味は？",
+    "choices": [
+      "日記",
+      "地図",
+      "教科書",
+      "辞書"
+    ],
+    "answerIndex": 3,
+    "explanation": "dictionary = 辞書。日記は diary、地図は map、教科書は textbook。",
+    "tags": [
+      "名詞",
+      "中1"
+    ]
+  },
+  {
+    "id": "voc-0004",
+    "category": "vocabulary",
+    "difficulty": 1,
+    "prompt": "「天気」を英語で言うと？",
+    "choices": [
+      "season",
+      "temperature",
+      "weather",
+      "wind"
+    ],
+    "answerIndex": 2,
+    "explanation": "weather = 天気。season は季節、temperature は気温、wind は風。",
+    "tags": [
+      "名詞",
+      "中1"
+    ]
+  },
+  {
+    "id": "voc-0005",
+    "category": "vocabulary",
+    "difficulty": 1,
+    "prompt": "「季節」を英語で言うと？",
+    "choices": [
+      "reason",
+      "season",
+      "weather",
+      "month"
+    ],
+    "answerIndex": 1,
+    "explanation": "season = 季節。reason は理由、month は（暦の）月。",
+    "tags": [
+      "名詞",
+      "中1"
+    ]
+  },
+  {
+    "id": "voc-0006",
+    "category": "vocabulary",
+    "difficulty": 1,
+    "prompt": "January の次の月は？",
+    "choices": [
+      "February",
+      "March",
+      "December",
+      "June"
+    ],
+    "answerIndex": 0,
+    "explanation": "January（1月）→ February（2月）→ March（3月）。",
+    "tags": [
+      "月",
+      "中1"
+    ]
+  },
+  {
+    "id": "voc-0007",
+    "category": "vocabulary",
+    "difficulty": 1,
+    "prompt": "Wednesday の意味は？",
+    "choices": [
+      "火曜日",
+      "木曜日",
+      "土曜日",
+      "水曜日"
+    ],
+    "answerIndex": 3,
+    "explanation": "Wednesday = 水曜日。火曜日は Tuesday、木曜日は Thursday、土曜日は Saturday。",
+    "tags": [
+      "曜日",
+      "中1"
+    ]
+  },
+  {
+    "id": "voc-0008",
+    "category": "vocabulary",
+    "difficulty": 1,
+    "prompt": "「朝食」を英語で言うと？",
+    "choices": [
+      "lunch",
+      "dinner",
+      "breakfast",
+      "dessert"
+    ],
+    "answerIndex": 2,
+    "explanation": "breakfast = 朝食。lunch は昼食、dinner は夕食、dessert はデザート。",
+    "tags": [
+      "名詞",
+      "中1"
+    ]
+  },
+  {
+    "id": "voc-0009",
+    "category": "vocabulary",
+    "difficulty": 2,
+    "prompt": "「忘れる」を英語で言うと？",
+    "choices": [
+      "remember",
+      "forget",
+      "borrow",
+      "believe"
+    ],
+    "answerIndex": 1,
+    "explanation": "forget = 忘れる。remember は覚えている、borrow は借りる、believe は信じる。",
+    "tags": [
+      "動詞",
+      "中2"
+    ]
+  },
+  {
+    "id": "voc-0010",
+    "category": "vocabulary",
+    "difficulty": 2,
+    "prompt": "「（無料で）借りる」を英語で言うと？",
+    "choices": [
+      "borrow",
+      "lend",
+      "sell",
+      "bring"
+    ],
+    "answerIndex": 0,
+    "explanation": "borrow = 借りる。lend は「貸す」なので逆の意味。sell は売る、bring は持ってくる。",
+    "tags": [
+      "動詞",
+      "中2"
+    ]
+  },
+  {
+    "id": "voc-0011",
+    "category": "vocabulary",
+    "difficulty": 2,
+    "prompt": "remember の意味は？",
+    "choices": [
+      "忘れる",
+      "決める",
+      "心配する",
+      "覚えている・思い出す"
+    ],
+    "answerIndex": 3,
+    "explanation": "remember = 覚えている、思い出す。忘れるは forget、決めるは decide、心配するは worry。",
+    "tags": [
+      "動詞",
+      "中2"
+    ]
+  },
+  {
+    "id": "voc-0012",
+    "category": "vocabulary",
+    "difficulty": 2,
+    "prompt": "「決める」を英語で言うと？",
+    "choices": [
+      "arrive",
+      "invite",
+      "decide",
+      "explain"
+    ],
+    "answerIndex": 2,
+    "explanation": "decide = 決める。arrive は到着する、invite は招待する、explain は説明する。",
+    "tags": [
+      "動詞",
+      "中2"
+    ]
+  },
+  {
+    "id": "voc-0013",
+    "category": "vocabulary",
+    "difficulty": 2,
+    "prompt": "「説明する」を英語で言うと？",
+    "choices": [
+      "exchange",
+      "explain",
+      "express",
+      "exercise"
+    ],
+    "answerIndex": 1,
+    "explanation": "explain = 説明する。exchange は交換する、express は表現する、exercise は運動する。",
+    "tags": [
+      "動詞",
+      "中2"
+    ]
+  },
+  {
+    "id": "voc-0014",
+    "category": "vocabulary",
+    "difficulty": 2,
+    "prompt": "「到着する」を英語で言うと？",
+    "choices": [
+      "arrive",
+      "leave",
+      "start",
+      "return"
+    ],
+    "answerIndex": 0,
+    "explanation": "arrive = 到着する（arrive at / in ～）。leave は出発する、return は戻る。",
+    "tags": [
+      "動詞",
+      "中2"
+    ]
+  },
+  {
+    "id": "voc-0015",
+    "category": "vocabulary",
+    "difficulty": 2,
+    "prompt": "expensive（高価な）の反対の意味の語は？",
+    "choices": [
+      "high",
+      "rich",
+      "famous",
+      "cheap"
+    ],
+    "answerIndex": 3,
+    "explanation": "cheap = 安い。expensive ⇔ cheap。rich は金持ちの、famous は有名な。",
+    "tags": [
+      "形容詞",
+      "反意語",
+      "中2"
+    ]
+  },
+  {
+    "id": "voc-0016",
+    "category": "vocabulary",
+    "difficulty": 1,
+    "prompt": "difficult（難しい）の反対の意味の語は？",
+    "choices": [
+      "hard",
+      "heavy",
+      "easy",
+      "busy"
+    ],
+    "answerIndex": 2,
+    "explanation": "easy = 簡単な。difficult ⇔ easy。hard は「難しい」で同じ意味。",
+    "tags": [
+      "形容詞",
+      "反意語",
+      "中1"
+    ]
+  },
+  {
+    "id": "voc-0017",
+    "category": "vocabulary",
+    "difficulty": 2,
+    "prompt": "「重要な」を英語で言うと？",
+    "choices": [
+      "interesting",
+      "important",
+      "impossible",
+      "popular"
+    ],
+    "answerIndex": 1,
+    "explanation": "important = 重要な。interesting はおもしろい、impossible は不可能な、popular は人気のある。",
+    "tags": [
+      "形容詞",
+      "中2"
+    ]
+  },
+  {
+    "id": "voc-0018",
+    "category": "vocabulary",
+    "difficulty": 2,
+    "prompt": "「人気のある」を英語で言うと？",
+    "choices": [
+      "popular",
+      "useful",
+      "careful",
+      "similar"
+    ],
+    "answerIndex": 0,
+    "explanation": "popular = 人気のある。useful は役に立つ、careful は注意深い、similar は似ている。",
+    "tags": [
+      "形容詞",
+      "中2"
+    ]
+  },
+  {
+    "id": "voc-0019",
+    "category": "vocabulary",
+    "difficulty": 3,
+    "prompt": "「便利な」を英語で言うと？",
+    "choices": [
+      "comfortable",
+      "different",
+      "dangerous",
+      "convenient"
+    ],
+    "answerIndex": 3,
+    "explanation": "convenient = 便利な。comfortable は快適な、different は異なる、dangerous は危険な。",
+    "tags": [
+      "形容詞",
+      "中3"
+    ]
+  },
+  {
+    "id": "voc-0020",
+    "category": "vocabulary",
+    "difficulty": 2,
+    "prompt": "「危険な」を英語で言うと？",
+    "choices": [
+      "delicious",
+      "famous",
+      "dangerous",
+      "necessary"
+    ],
+    "answerIndex": 2,
+    "explanation": "dangerous = 危険な。delicious はとてもおいしい、necessary は必要な。",
+    "tags": [
+      "形容詞",
+      "中2"
+    ]
+  },
+  {
+    "id": "voc-0021",
+    "category": "vocabulary",
+    "difficulty": 3,
+    "prompt": "「必要な」を英語で言うと？",
+    "choices": [
+      "natural",
+      "necessary",
+      "national",
+      "nervous"
+    ],
+    "answerIndex": 1,
+    "explanation": "necessary = 必要な。natural は自然の、national は国の、nervous は緊張した。",
+    "tags": [
+      "形容詞",
+      "中3"
+    ]
+  },
+  {
+    "id": "voc-0022",
+    "category": "vocabulary",
+    "difficulty": 3,
+    "prompt": "environment の意味は？",
+    "choices": [
+      "環境",
+      "政府",
+      "経験",
+      "文化"
+    ],
+    "answerIndex": 0,
+    "explanation": "environment = 環境。政府は government、経験は experience、文化は culture。入試頻出の社会的テーマ。",
+    "tags": [
+      "名詞",
+      "中3",
+      "入試頻出"
+    ]
+  },
+  {
+    "id": "voc-0023",
+    "category": "vocabulary",
+    "difficulty": 2,
+    "prompt": "「文化」を英語で言うと？",
+    "choices": [
+      "future",
+      "nature",
+      "picture",
+      "culture"
+    ],
+    "answerIndex": 3,
+    "explanation": "culture = 文化。future は未来、nature は自然、picture は絵・写真。",
+    "tags": [
+      "名詞",
+      "中2"
+    ]
+  },
+  {
+    "id": "voc-0024",
+    "category": "vocabulary",
+    "difficulty": 3,
+    "prompt": "「経験」を英語で言うと？",
+    "choices": [
+      "experiment",
+      "environment",
+      "experience",
+      "exercise"
+    ],
+    "answerIndex": 2,
+    "explanation": "experience = 経験。experiment は実験、environment は環境、exercise は運動。",
+    "tags": [
+      "名詞",
+      "中3"
+    ]
+  },
+  {
+    "id": "voc-0025",
+    "category": "vocabulary",
+    "difficulty": 2,
+    "prompt": "「未来・将来」を英語で言うと？",
+    "choices": [
+      "past",
+      "future",
+      "history",
+      "present"
+    ],
+    "answerIndex": 1,
+    "explanation": "future = 未来。past は過去、present は現在（または贈り物）、history は歴史。",
+    "tags": [
+      "名詞",
+      "中2"
+    ]
+  },
+  {
+    "id": "voc-0026",
+    "category": "vocabulary",
+    "difficulty": 2,
+    "prompt": "「歴史」を英語で言うと？",
+    "choices": [
+      "history",
+      "science",
+      "society",
+      "geography"
+    ],
+    "answerIndex": 0,
+    "explanation": "history = 歴史。science は理科・科学、society は社会、geography は地理。",
+    "tags": [
+      "名詞",
+      "中2"
+    ]
+  },
+  {
+    "id": "voc-0027",
+    "category": "vocabulary",
+    "difficulty": 1,
+    "prompt": "「答える」を英語で言うと？",
+    "choices": [
+      "ask",
+      "call",
+      "teach",
+      "answer"
+    ],
+    "answerIndex": 3,
+    "explanation": "answer = 答える。ask はたずねる、call は電話する・呼ぶ、teach は教える。",
+    "tags": [
+      "動詞",
+      "中1"
+    ]
+  },
+  {
+    "id": "voc-0028",
+    "category": "vocabulary",
+    "difficulty": 2,
+    "prompt": "「たいてい・ふつうは」を英語で言うと？",
+    "choices": [
+      "never",
+      "already",
+      "usually",
+      "finally"
+    ],
+    "answerIndex": 2,
+    "explanation": "usually = たいてい。never は決して～ない、already はすでに、finally はついに。",
+    "tags": [
+      "副詞",
+      "頻度",
+      "中2"
+    ]
+  },
+  {
+    "id": "voc-0029",
+    "category": "vocabulary",
+    "difficulty": 2,
+    "prompt": "already の意味は？",
+    "choices": [
+      "まだ",
+      "すでに・もう",
+      "ついに",
+      "ときどき"
+    ],
+    "answerIndex": 1,
+    "explanation": "already = すでに（現在完了の肯定文でよく使う）。まだ は yet、ときどき は sometimes。",
+    "tags": [
+      "副詞",
+      "中3"
+    ]
+  },
+  {
+    "id": "voc-0030",
+    "category": "vocabulary",
+    "difficulty": 2,
+    "prompt": "「ついに・最後に」を英語で言うと？",
+    "choices": [
+      "finally",
+      "sometimes",
+      "suddenly",
+      "probably"
+    ],
+    "answerIndex": 0,
+    "explanation": "finally = ついに、最後に。suddenly は突然、probably はたぶん。",
+    "tags": [
+      "副詞",
+      "中2"
+    ]
+  },
+  {
+    "id": "voc-0031",
+    "category": "vocabulary",
+    "difficulty": 1,
+    "prompt": "「台所」を英語で言うと？",
+    "choices": [
+      "bedroom",
+      "bathroom",
+      "garden",
+      "kitchen"
+    ],
+    "answerIndex": 3,
+    "explanation": "kitchen = 台所。bedroom は寝室、bathroom は浴室、garden は庭。",
+    "tags": [
+      "名詞",
+      "中1"
+    ]
+  },
+  {
+    "id": "voc-0032",
+    "category": "vocabulary",
+    "difficulty": 2,
+    "prompt": "「村」を英語で言うと？",
+    "choices": [
+      "capital",
+      "island",
+      "village",
+      "forest"
+    ],
+    "answerIndex": 2,
+    "explanation": "village = 村。capital は首都、island は島、forest は森。",
+    "tags": [
+      "名詞",
+      "中2"
+    ]
+  },
+  {
+    "id": "voc-0033",
+    "category": "vocabulary",
+    "difficulty": 2,
+    "prompt": "「島」を英語で言うと？",
+    "choices": [
+      "ocean",
+      "island",
+      "mountain",
+      "river"
+    ],
+    "answerIndex": 1,
+    "explanation": "island = 島（s は発音しない）。ocean は海洋、mountain は山、river は川。",
+    "tags": [
+      "名詞",
+      "中2"
+    ]
+  },
+  {
+    "id": "voc-0034",
+    "category": "vocabulary",
+    "difficulty": 2,
+    "prompt": "「旅行する」を英語で言うと？",
+    "choices": [
+      "travel",
+      "follow",
+      "believe",
+      "receive"
+    ],
+    "answerIndex": 0,
+    "explanation": "travel = 旅行する。follow はついていく、believe は信じる、receive は受け取る。",
+    "tags": [
+      "動詞",
+      "中2"
+    ]
+  },
+  {
+    "id": "voc-0035",
+    "category": "vocabulary",
+    "difficulty": 3,
+    "prompt": "「受け取る」を英語で言うと？",
+    "choices": [
+      "return",
+      "reply",
+      "repeat",
+      "receive"
+    ],
+    "answerIndex": 3,
+    "explanation": "receive = 受け取る。return は戻る・返す、reply は返事をする、repeat はくり返す。",
+    "tags": [
+      "動詞",
+      "中3"
+    ]
+  },
+  {
+    "id": "voc-0036",
+    "category": "vocabulary",
+    "difficulty": 3,
+    "prompt": "「話し合う」を英語で言うと？",
+    "choices": [
+      "discover",
+      "describe",
+      "discuss",
+      "decide"
+    ],
+    "answerIndex": 2,
+    "explanation": "discuss = ～について話し合う（about は不要）。discover は発見する、describe は描写する。",
+    "tags": [
+      "動詞",
+      "中3"
+    ]
+  },
+  {
+    "id": "voc-0037",
+    "category": "vocabulary",
+    "difficulty": 3,
+    "prompt": "「発見する」を英語で言うと？",
+    "choices": [
+      "develop",
+      "discover",
+      "destroy",
+      "deliver"
+    ],
+    "answerIndex": 1,
+    "explanation": "discover = 発見する。develop は発達させる、destroy は破壊する、deliver は配達する。",
+    "tags": [
+      "動詞",
+      "中3"
+    ]
+  },
+  {
+    "id": "voc-0038",
+    "category": "vocabulary",
+    "difficulty": 3,
+    "prompt": "communicate の意味は？",
+    "choices": [
+      "意思を伝え合う",
+      "比べる",
+      "集める",
+      "招待する"
+    ],
+    "answerIndex": 0,
+    "explanation": "communicate = 意思を伝え合う。比べるは compare、集めるは collect、招待するは invite。",
+    "tags": [
+      "動詞",
+      "中3"
+    ]
+  },
+  {
+    "id": "voc-0039",
+    "category": "vocabulary",
+    "difficulty": 2,
+    "prompt": "throw（投げる）の過去形は？",
+    "choices": [
+      "throwed",
+      "thrown",
+      "throwing",
+      "threw"
+    ],
+    "answerIndex": 3,
+    "explanation": "throw - threw - thrown。過去形は threw、thrown は過去分詞。",
+    "tags": [
+      "不規則動詞",
+      "中2"
+    ]
+  },
+  {
+    "id": "voc-0040",
+    "category": "vocabulary",
+    "difficulty": 1,
+    "prompt": "buy（買う）の過去形は？",
+    "choices": [
+      "buyed",
+      "brought",
+      "bought",
+      "buys"
+    ],
+    "answerIndex": 2,
+    "explanation": "buy - bought - bought。brought は bring（持ってくる）の過去形。",
+    "tags": [
+      "不規則動詞",
+      "中1"
+    ]
+  },
+  {
+    "id": "voc-0041",
+    "category": "vocabulary",
+    "difficulty": 2,
+    "prompt": "teach（教える）の過去形は？",
+    "choices": [
+      "teached",
+      "taught",
+      "thought",
+      "teaches"
+    ],
+    "answerIndex": 1,
+    "explanation": "teach - taught - taught。thought は think の過去形。",
+    "tags": [
+      "不規則動詞",
+      "中2"
+    ]
+  },
+  {
+    "id": "voc-0042",
+    "category": "vocabulary",
+    "difficulty": 2,
+    "prompt": "write（書く）の過去分詞は？",
+    "choices": [
+      "written",
+      "wrote",
+      "writed",
+      "writing"
+    ],
+    "answerIndex": 0,
+    "explanation": "write - wrote - written。受け身や現在完了では過去分詞 written を使う。",
+    "tags": [
+      "不規則動詞",
+      "中2"
+    ]
+  },
+  {
+    "id": "voc-0043",
+    "category": "vocabulary",
+    "difficulty": 2,
+    "prompt": "neighbor の意味は？",
+    "choices": [
+      "友だち",
+      "家族",
+      "先輩",
+      "近所の人"
+    ],
+    "answerIndex": 3,
+    "explanation": "neighbor = 近所の人、隣人。友だちは friend、家族は family。",
+    "tags": [
+      "名詞",
+      "中2"
+    ]
   }
 ]

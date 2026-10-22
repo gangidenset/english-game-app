@@ -4,9 +4,746 @@
     "category": "grammar",
     "difficulty": 1,
     "prompt": "My brother (   ) tennis every Sunday.",
-    "choices": ["plays", "play", "playing", "to play"],
-    "answerIndex": 0,
+    "choices": [
+      "play",
+      "plays",
+      "playing",
+      "to play"
+    ],
+    "answerIndex": 1,
     "explanation": "主語が三人称単数（My brother）で現在の習慣なので、動詞に -s をつけて plays。",
-    "tags": ["三単現", "中1"]
+    "tags": [
+      "三単現",
+      "中1"
+    ]
+  },
+  {
+    "id": "gra-0002",
+    "category": "grammar",
+    "difficulty": 1,
+    "prompt": "(   ) you like music? — Yes, I do.",
+    "choices": [
+      "Do",
+      "Are",
+      "Does",
+      "Is"
+    ],
+    "answerIndex": 0,
+    "explanation": "一般動詞（like）の疑問文で主語が you なので Do。答えも do で答えている。",
+    "tags": [
+      "一般動詞",
+      "疑問文",
+      "中1"
+    ]
+  },
+  {
+    "id": "gra-0003",
+    "category": "grammar",
+    "difficulty": 1,
+    "prompt": "She (   ) a junior high school student.",
+    "choices": [
+      "are",
+      "am",
+      "be",
+      "is"
+    ],
+    "answerIndex": 3,
+    "explanation": "主語が She（三人称単数）なので be 動詞は is。",
+    "tags": [
+      "be動詞",
+      "中1"
+    ]
+  },
+  {
+    "id": "gra-0004",
+    "category": "grammar",
+    "difficulty": 1,
+    "prompt": "I (   ) to Kyoto last summer.",
+    "choices": [
+      "go",
+      "goes",
+      "went",
+      "have gone"
+    ],
+    "answerIndex": 2,
+    "explanation": "last summer（去年の夏）は過去を表すので過去形 went。現在完了は last ～ と一緒に使えない。",
+    "tags": [
+      "過去形",
+      "中1"
+    ]
+  },
+  {
+    "id": "gra-0005",
+    "category": "grammar",
+    "difficulty": 1,
+    "prompt": "Look! The children (   ) in the park.",
+    "choices": [
+      "play",
+      "are playing",
+      "plays",
+      "played"
+    ],
+    "answerIndex": 1,
+    "explanation": "Look!（見て！）は「今まさに」の合図。現在進行形 are playing を使う。",
+    "tags": [
+      "現在進行形",
+      "中1"
+    ]
+  },
+  {
+    "id": "gra-0006",
+    "category": "grammar",
+    "difficulty": 1,
+    "prompt": "(   ) did you get up this morning? — At six.",
+    "choices": [
+      "What time",
+      "Where",
+      "Who",
+      "How many"
+    ],
+    "answerIndex": 0,
+    "explanation": "「6時に」と時刻を答えているので What time（何時に）。",
+    "tags": [
+      "疑問詞",
+      "中1"
+    ]
+  },
+  {
+    "id": "gra-0007",
+    "category": "grammar",
+    "difficulty": 1,
+    "prompt": "There (   ) two cats under the table.",
+    "choices": [
+      "is",
+      "be",
+      "am",
+      "are"
+    ],
+    "answerIndex": 3,
+    "explanation": "There is / are の文は後ろの名詞で決まる。two cats は複数なので are。",
+    "tags": [
+      "There is構文",
+      "中1"
+    ]
+  },
+  {
+    "id": "gra-0008",
+    "category": "grammar",
+    "difficulty": 1,
+    "prompt": "I will (   ) my grandmother tomorrow.",
+    "choices": [
+      "visits",
+      "visited",
+      "visit",
+      "visiting"
+    ],
+    "answerIndex": 2,
+    "explanation": "助動詞 will の後ろは動詞の原形。",
+    "tags": [
+      "未来",
+      "助動詞",
+      "中2"
+    ]
+  },
+  {
+    "id": "gra-0009",
+    "category": "grammar",
+    "difficulty": 1,
+    "prompt": "Tom is (   ) than Ken.",
+    "choices": [
+      "tall",
+      "taller",
+      "tallest",
+      "more tall"
+    ],
+    "answerIndex": 1,
+    "explanation": "than があるので比較級。tall の比較級は taller。",
+    "tags": [
+      "比較",
+      "中2"
+    ]
+  },
+  {
+    "id": "gra-0010",
+    "category": "grammar",
+    "difficulty": 2,
+    "prompt": "This is the (   ) mountain in Japan.",
+    "choices": [
+      "highest",
+      "higher",
+      "high",
+      "most high"
+    ],
+    "answerIndex": 0,
+    "explanation": "the ～ in Japan（日本で一番～）なので最上級 highest。",
+    "tags": [
+      "比較",
+      "最上級",
+      "中2"
+    ]
+  },
+  {
+    "id": "gra-0011",
+    "category": "grammar",
+    "difficulty": 2,
+    "prompt": "This book is (   ) interesting than that one.",
+    "choices": [
+      "most",
+      "very",
+      "as",
+      "more"
+    ],
+    "answerIndex": 3,
+    "explanation": "interesting のような長い語の比較級は more ～ than。",
+    "tags": [
+      "比較",
+      "中2"
+    ]
+  },
+  {
+    "id": "gra-0012",
+    "category": "grammar",
+    "difficulty": 2,
+    "prompt": "Emi can run as (   ) as her brother.",
+    "choices": [
+      "faster",
+      "fastest",
+      "fast",
+      "more fast"
+    ],
+    "answerIndex": 2,
+    "explanation": "as ～ as … の間には形容詞・副詞の原級が入る。",
+    "tags": [
+      "比較",
+      "原級",
+      "中2"
+    ]
+  },
+  {
+    "id": "gra-0013",
+    "category": "grammar",
+    "difficulty": 2,
+    "prompt": "English is spoken (   ) many countries.",
+    "choices": [
+      "to",
+      "in",
+      "for",
+      "with"
+    ],
+    "answerIndex": 1,
+    "explanation": "「多くの国で話されている」= spoken in many countries。場所を表す in。",
+    "tags": [
+      "受け身",
+      "中3"
+    ]
+  },
+  {
+    "id": "gra-0014",
+    "category": "grammar",
+    "difficulty": 2,
+    "prompt": "This letter was (   ) by my father.",
+    "choices": [
+      "written",
+      "wrote",
+      "write",
+      "writing"
+    ],
+    "answerIndex": 0,
+    "explanation": "受け身は be 動詞＋過去分詞。write の過去分詞は written。",
+    "tags": [
+      "受け身",
+      "中3"
+    ]
+  },
+  {
+    "id": "gra-0015",
+    "category": "grammar",
+    "difficulty": 2,
+    "prompt": "I have (   ) in Osaka for five years.",
+    "choices": [
+      "live",
+      "living",
+      "lives",
+      "lived"
+    ],
+    "answerIndex": 3,
+    "explanation": "have ＋過去分詞で現在完了（継続）。for five years（5年間）がヒント。",
+    "tags": [
+      "現在完了",
+      "継続",
+      "中3"
+    ]
+  },
+  {
+    "id": "gra-0016",
+    "category": "grammar",
+    "difficulty": 2,
+    "prompt": "Have you ever (   ) to Hokkaido?",
+    "choices": [
+      "be",
+      "was",
+      "been",
+      "being"
+    ],
+    "answerIndex": 2,
+    "explanation": "have been to ～ =「～へ行ったことがある」（経験）。ever がヒント。",
+    "tags": [
+      "現在完了",
+      "経験",
+      "中3"
+    ]
+  },
+  {
+    "id": "gra-0017",
+    "category": "grammar",
+    "difficulty": 2,
+    "prompt": "I have already (   ) my homework.",
+    "choices": [
+      "finish",
+      "finished",
+      "finishing",
+      "to finish"
+    ],
+    "answerIndex": 1,
+    "explanation": "have already ＋過去分詞 =「もう～してしまった」（完了）。",
+    "tags": [
+      "現在完了",
+      "完了",
+      "中3"
+    ]
+  },
+  {
+    "id": "gra-0018",
+    "category": "grammar",
+    "difficulty": 2,
+    "prompt": "I want (   ) a doctor in the future.",
+    "choices": [
+      "to be",
+      "being",
+      "be",
+      "am"
+    ],
+    "answerIndex": 0,
+    "explanation": "want to ～ =「～したい」。to の後は原形なので to be。",
+    "tags": [
+      "不定詞",
+      "中2"
+    ]
+  },
+  {
+    "id": "gra-0019",
+    "category": "grammar",
+    "difficulty": 2,
+    "prompt": "He enjoyed (   ) soccer with his friends.",
+    "choices": [
+      "to play",
+      "play",
+      "played",
+      "playing"
+    ],
+    "answerIndex": 3,
+    "explanation": "enjoy の後ろは動名詞（-ing）。enjoy to play とは言わない。",
+    "tags": [
+      "動名詞",
+      "中2"
+    ]
+  },
+  {
+    "id": "gra-0020",
+    "category": "grammar",
+    "difficulty": 2,
+    "prompt": "I went to the library (   ) study.",
+    "choices": [
+      "for",
+      "with",
+      "to",
+      "at"
+    ],
+    "answerIndex": 2,
+    "explanation": "「勉強するために」は不定詞の副詞的用法 to study。",
+    "tags": [
+      "不定詞",
+      "中2"
+    ]
+  },
+  {
+    "id": "gra-0021",
+    "category": "grammar",
+    "difficulty": 2,
+    "prompt": "I have a lot of homework (   ) today.",
+    "choices": [
+      "doing",
+      "to do",
+      "do",
+      "did"
+    ],
+    "answerIndex": 1,
+    "explanation": "「するべき宿題」は不定詞の形容詞的用法 homework to do。",
+    "tags": [
+      "不定詞",
+      "中2"
+    ]
+  },
+  {
+    "id": "gra-0022",
+    "category": "grammar",
+    "difficulty": 3,
+    "prompt": "Do you know the boy (   ) is talking with Ms. Sato?",
+    "choices": [
+      "who",
+      "which",
+      "whose",
+      "what"
+    ],
+    "answerIndex": 0,
+    "explanation": "先行詞が人（the boy）で、後ろに動詞 is が続くので主格の関係代名詞 who。",
+    "tags": [
+      "関係代名詞",
+      "中3"
+    ]
+  },
+  {
+    "id": "gra-0023",
+    "category": "grammar",
+    "difficulty": 3,
+    "prompt": "This is the cake (   ) my mother made.",
+    "choices": [
+      "who",
+      "what",
+      "whose",
+      "that"
+    ],
+    "answerIndex": 3,
+    "explanation": "先行詞が物（the cake）で、目的格の関係代名詞は that / which。who は人に使う。",
+    "tags": [
+      "関係代名詞",
+      "中3"
+    ]
+  },
+  {
+    "id": "gra-0024",
+    "category": "grammar",
+    "difficulty": 3,
+    "prompt": "I have a friend (   ) father is a pilot.",
+    "choices": [
+      "who",
+      "which",
+      "whose",
+      "that"
+    ],
+    "answerIndex": 2,
+    "explanation": "「その友だちの父親」と所有を表すので whose。",
+    "tags": [
+      "関係代名詞",
+      "中3"
+    ]
+  },
+  {
+    "id": "gra-0025",
+    "category": "grammar",
+    "difficulty": 3,
+    "prompt": "The man (   ) a red cap is my uncle.",
+    "choices": [
+      "wears",
+      "wearing",
+      "wore",
+      "worn"
+    ],
+    "answerIndex": 1,
+    "explanation": "「赤い帽子をかぶっている男性」は現在分詞 wearing が後ろから名詞を修飾する形。",
+    "tags": [
+      "分詞",
+      "中3"
+    ]
+  },
+  {
+    "id": "gra-0026",
+    "category": "grammar",
+    "difficulty": 3,
+    "prompt": "Look at the window (   ) by Ken yesterday.",
+    "choices": [
+      "broken",
+      "breaking",
+      "broke",
+      "break"
+    ],
+    "answerIndex": 0,
+    "explanation": "「割られた窓」なので受け身の意味の過去分詞 broken が後ろから修飾。",
+    "tags": [
+      "分詞",
+      "中3"
+    ]
+  },
+  {
+    "id": "gra-0027",
+    "category": "grammar",
+    "difficulty": 3,
+    "prompt": "If it (   ) tomorrow, I will stay home.",
+    "choices": [
+      "will rain",
+      "rained",
+      "raining",
+      "rains"
+    ],
+    "answerIndex": 3,
+    "explanation": "「もし～なら」の if の中は、未来のことでも現在形を使う。",
+    "tags": [
+      "接続詞",
+      "中2"
+    ]
+  },
+  {
+    "id": "gra-0028",
+    "category": "grammar",
+    "difficulty": 3,
+    "prompt": "I know (   ) he lives.",
+    "choices": [
+      "what",
+      "which",
+      "where",
+      "who"
+    ],
+    "answerIndex": 2,
+    "explanation": "「彼がどこに住んでいるか」= where he lives（間接疑問文：疑問詞＋主語＋動詞）。",
+    "tags": [
+      "間接疑問",
+      "中3"
+    ]
+  },
+  {
+    "id": "gra-0029",
+    "category": "grammar",
+    "difficulty": 3,
+    "prompt": "I don't know (   ) to do next.",
+    "choices": [
+      "why",
+      "what",
+      "who",
+      "whose"
+    ],
+    "answerIndex": 1,
+    "explanation": "what to do =「何をすべきか」。疑問詞＋to 不定詞。",
+    "tags": [
+      "不定詞",
+      "中3"
+    ]
+  },
+  {
+    "id": "gra-0030",
+    "category": "grammar",
+    "difficulty": 3,
+    "prompt": "It is important (   ) us to study English.",
+    "choices": [
+      "for",
+      "of",
+      "to",
+      "at"
+    ],
+    "answerIndex": 0,
+    "explanation": "It is ～ for 人 to … =「（人）にとって…することは～だ」。",
+    "tags": [
+      "不定詞",
+      "It is構文",
+      "中3"
+    ]
+  },
+  {
+    "id": "gra-0031",
+    "category": "grammar",
+    "difficulty": 3,
+    "prompt": "My father told me (   ) the door.",
+    "choices": [
+      "close",
+      "closing",
+      "closed",
+      "to close"
+    ],
+    "answerIndex": 3,
+    "explanation": "tell 人 to ～ =「（人）に～するように言う」。",
+    "tags": [
+      "不定詞",
+      "中3"
+    ]
+  },
+  {
+    "id": "gra-0032",
+    "category": "grammar",
+    "difficulty": 3,
+    "prompt": "I'm too tired (   ) walk.",
+    "choices": [
+      "so",
+      "that",
+      "to",
+      "enough"
+    ],
+    "answerIndex": 2,
+    "explanation": "too ～ to … =「～すぎて…できない」。",
+    "tags": [
+      "不定詞",
+      "中3"
+    ]
+  },
+  {
+    "id": "gra-0033",
+    "category": "grammar",
+    "difficulty": 2,
+    "prompt": "She is good (   ) playing the piano.",
+    "choices": [
+      "in",
+      "at",
+      "on",
+      "for"
+    ],
+    "answerIndex": 1,
+    "explanation": "be good at ～ =「～が得意だ」。at の後ろの動詞は -ing 形。",
+    "tags": [
+      "熟語",
+      "動名詞",
+      "中2"
+    ]
+  },
+  {
+    "id": "gra-0034",
+    "category": "grammar",
+    "difficulty": 2,
+    "prompt": "Which do you like (   ), summer or winter?",
+    "choices": [
+      "better",
+      "good",
+      "well",
+      "many"
+    ],
+    "answerIndex": 0,
+    "explanation": "2つのうちどちらが好きかは like ～ better。",
+    "tags": [
+      "比較",
+      "中2"
+    ]
+  },
+  {
+    "id": "gra-0035",
+    "category": "grammar",
+    "difficulty": 2,
+    "prompt": "Kumi (   ) watching TV when I called her.",
+    "choices": [
+      "is",
+      "were",
+      "has",
+      "was"
+    ],
+    "answerIndex": 3,
+    "explanation": "「電話したとき～していた」は過去進行形。主語 Kumi なので was。",
+    "tags": [
+      "過去進行形",
+      "中2"
+    ]
+  },
+  {
+    "id": "gra-0036",
+    "category": "grammar",
+    "difficulty": 2,
+    "prompt": "You (   ) not swim in this river. It's dangerous.",
+    "choices": [
+      "has",
+      "are",
+      "must",
+      "did"
+    ],
+    "answerIndex": 2,
+    "explanation": "must not ～ =「～してはいけない」（禁止）。",
+    "tags": [
+      "助動詞",
+      "中2"
+    ]
+  },
+  {
+    "id": "gra-0037",
+    "category": "grammar",
+    "difficulty": 2,
+    "prompt": "(   ) I open the window? — Sure.",
+    "choices": [
+      "Was",
+      "Shall",
+      "Am",
+      "Does"
+    ],
+    "answerIndex": 1,
+    "explanation": "Shall I ～? =「（私が）～しましょうか」と申し出る表現。",
+    "tags": [
+      "助動詞",
+      "中2"
+    ]
+  },
+  {
+    "id": "gra-0038",
+    "category": "grammar",
+    "difficulty": 3,
+    "prompt": "I wish I (   ) a bird.",
+    "choices": [
+      "were",
+      "am",
+      "be",
+      "is"
+    ],
+    "answerIndex": 0,
+    "explanation": "I wish ＋過去形 =「～ならいいのに」（仮定法）。be 動詞は主語に関係なく were が基本。",
+    "tags": [
+      "仮定法",
+      "中3"
+    ]
+  },
+  {
+    "id": "gra-0039",
+    "category": "grammar",
+    "difficulty": 1,
+    "prompt": "This bag is (   ). It's not yours.",
+    "choices": [
+      "my",
+      "me",
+      "I",
+      "mine"
+    ],
+    "answerIndex": 3,
+    "explanation": "「私のもの」= mine（所有代名詞）。後ろに名詞がないので my は使えない。",
+    "tags": [
+      "代名詞",
+      "中1"
+    ]
+  },
+  {
+    "id": "gra-0040",
+    "category": "grammar",
+    "difficulty": 1,
+    "prompt": "How (   ) is this T-shirt? — It's 2,000 yen.",
+    "choices": [
+      "many",
+      "long",
+      "much",
+      "old"
+    ],
+    "answerIndex": 2,
+    "explanation": "値段をたずねるときは How much。",
+    "tags": [
+      "疑問詞",
+      "中1"
+    ]
+  },
+  {
+    "id": "gra-0041",
+    "category": "grammar",
+    "difficulty": 3,
+    "prompt": "He has two sisters. One lives in Tokyo, and (   ) lives in Osaka.",
+    "choices": [
+      "another",
+      "the other",
+      "other",
+      "others"
+    ],
+    "answerIndex": 1,
+    "explanation": "2つ（2人）のうち、1つは one、残りの1つは the other。",
+    "tags": [
+      "代名詞",
+      "中3"
+    ]
   }
 ]
