@@ -1,0 +1,296 @@
+/* 共通 UI コンポーネントのスタイル（src/components/*） */
+
+/* ---------- Button ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: var(--tap-min);
+  padding: 0 var(--space-5);
+  border: none;
+  border-radius: var(--radius);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition:
+    transform 0.08s ease,
+    filter 0.15s ease,
+    background 0.15s ease;
+}
+.btn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.btn:focus-visible {
+  outline: 3px solid var(--color-xp);
+  outline-offset: 2px;
+}
+.btn--block {
+  width: 100%;
+}
+.btn--lg {
+  min-height: 64px;
+  font-size: 1.25rem;
+  border-radius: var(--radius-lg);
+}
+.btn--sm {
+  min-height: 40px;
+  padding: 0 var(--space-4);
+  font-size: 0.875rem;
+}
+.btn--primary {
+  background: linear-gradient(180deg, var(--color-primary), var(--color-primary-strong));
+  color: var(--color-on-primary);
+  box-shadow: 0 4px 0 #a16207, var(--shadow);
+}
+.btn--primary:active:not(:disabled) {
+  box-shadow: 0 1px 0 #a16207;
+  transform: translateY(3px);
+}
+.btn--secondary {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+}
+.btn--ghost {
+  background: transparent;
+  color: var(--color-text-sub);
+}
+.btn--danger {
+  background: transparent;
+  border: 1px solid var(--color-wrong);
+  color: var(--color-wrong);
+}
+
+/* ---------- Card ---------- */
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+  box-shadow: var(--shadow);
+}
+
+/* ---------- ProgressBar ---------- */
+.progress {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.progress__fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+/* ---------- StatTile ---------- */
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: var(--space-3) var(--space-2);
+  text-align: center;
+}
+.stat__icon {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+.stat__value {
+  font-size: 1.375rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+.stat__label {
+  font-size: 0.75rem;
+  color: var(--color-text-sub);
+}
+
+/* ---------- TopBar ---------- */
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-height: 44px;
+}
+.topbar__title {
+  flex: 1;
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+.topbar__back {
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: var(--color-surface-2);
+  font-size: 1.25rem;
+  cursor: pointer;
+}
+
+/* ---------- Lives ---------- */
+.lives {
+  display: flex;
+  gap: 2px;
+  font-size: 1.25rem;
+}
+.lives__heart--lost {
+  opacity: 0.2;
+  filter: grayscale(1);
+}
+.lives__heart--pop {
+  animation: heart-pop 0.4s ease;
+}
+@keyframes heart-pop {
+  50% {
+    transform: scale(1.5);
+  }
+}
+
+/* ---------- TimerBar ---------- */
+.timer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.timer__num {
+  min-width: 2.5ch;
+  text-align: right;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+.timer--danger .timer__num {
+  color: var(--color-wrong);
+  animation: blink 0.5s steps(2) infinite;
+}
+@keyframes blink {
+  50% {
+    opacity: 0.4;
+  }
+}
+
+/* ---------- ChoiceButton ---------- */
+.choice {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+  min-height: 60px;
+  padding: var(--space-3) var(--space-4);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  text-align: left;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    transform 0.08s ease,
+    background 0.15s ease,
+    border-color 0.15s ease;
+}
+.choice:active:not(:disabled) {
+  transform: scale(0.98);
+}
+.choice:disabled {
+  cursor: default;
+}
+.choice__mark {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-surface-2);
+  font-size: 0.875rem;
+  font-weight: 800;
+}
+.choice--correct {
+  border-color: var(--color-correct);
+  background: rgba(34, 197, 94, 0.18);
+}
+.choice--correct .choice__mark {
+  background: var(--color-correct);
+}
+.choice--wrong {
+  border-color: var(--color-wrong);
+  background: rgba(239, 68, 68, 0.18);
+  animation: shake 0.3s ease;
+}
+.choice--wrong .choice__mark {
+  background: var(--color-wrong);
+}
+.choice--dim {
+  opacity: 0.45;
+}
+@keyframes shake {
+  25% {
+    transform: translateX(-6px);
+  }
+  75% {
+    transform: translateX(6px);
+  }
+}
+
+/* ---------- RankBadge ---------- */
+.rank {
+  display: grid;
+  place-items: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  font-size: 4rem;
+  font-weight: 900;
+  color: #fff;
+  box-shadow: var(--shadow);
+  animation: rank-in 0.6s cubic-bezier(0.2, 1.6, 0.4, 1);
+}
+.rank--S {
+  background: linear-gradient(135deg, #facc15, #f97316);
+}
+.rank--A {
+  background: linear-gradient(135deg, #f472b6, #a855f7);
+}
+.rank--B {
+  background: linear-gradient(135deg, #38bdf8, #6366f1);
+}
+.rank--C {
+  background: linear-gradient(135deg, #34d399, #0d9488);
+}
+.rank--D {
+  background: linear-gradient(135deg, #94a3b8, #475569);
+}
+@keyframes rank-in {
+  from {
+    transform: scale(0.2) rotate(-30deg);
+    opacity: 0;
+  }
+}
+
+/* ---------- Toast ---------- */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: calc(var(--space-5) + env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  width: calc(100% - 2 * var(--space-4));
+  max-width: calc(var(--app-max-width) - 2 * var(--space-4));
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow);
+  font-size: 0.875rem;
+}
+.toast > span {
+  flex: 1;
+}

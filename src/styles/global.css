@@ -2,15 +2,39 @@
  * グローバルスタイル（スマートフォン最優先）。
  * - 基本はスマホ縦画面で設計し、タブレット / PC はメディアクエリで広げる。
  * - iPhone のノッチ・ホームバーを避けるため safe-area を考慮する。
+ * - 色・余白・角丸はすべてデザイントークン（CSS 変数）で管理する。
  */
 :root {
+  /* 色 */
   --color-bg: #0f0d2e;
+  --color-bg-grad: radial-gradient(120% 80% at 50% 0%, #2a2470 0%, #0f0d2e 60%);
   --color-surface: #1e1b4b;
+  --color-surface-2: #2b2768;
+  --color-border: rgba(165, 180, 252, 0.18);
   --color-primary: #facc15;
+  --color-primary-strong: #eab308;
+  --color-on-primary: #1e1b4b;
   --color-text: #f8fafc;
   --color-text-sub: #a5b4fc;
+  --color-correct: #22c55e;
+  --color-wrong: #ef4444;
+  --color-combo: #fb923c;
+  --color-xp: #38bdf8;
+  --color-life: #f43f5e;
+
+  /* 形・余白 */
+  --radius-sm: 10px;
   --radius: 16px;
+  --radius-lg: 24px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --tap-min: 52px;
   --app-max-width: 480px;
+  --shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
 
   color-scheme: dark;
   font-family:
@@ -37,52 +61,110 @@ body,
 }
 
 body {
+  background: var(--color-bg-grad), var(--color-bg);
+  background-attachment: fixed;
   overscroll-behavior: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 button {
   font: inherit;
+  color: inherit;
   touch-action: manipulation;
 }
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ---------- レイアウト ---------- */
 
 .app-shell {
   width: 100%;
   max-width: var(--app-max-width);
   min-height: 100dvh;
   margin: 0 auto;
-  padding: calc(16px + env(safe-area-inset-top)) calc(16px + env(safe-area-inset-right))
-    calc(16px + env(safe-area-inset-bottom)) calc(16px + env(safe-area-inset-left));
+  padding: calc(var(--space-4) + env(safe-area-inset-top))
+    calc(var(--space-4) + env(safe-area-inset-right))
+    calc(var(--space-4) + env(safe-area-inset-bottom))
+    calc(var(--space-4) + env(safe-area-inset-left));
+  display: flex;
+  flex-direction: column;
 }
 
 .page {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: var(--space-4);
+  animation: page-in 0.25s ease-out;
+}
+
+.page--center {
   justify-content: center;
-  min-height: 70dvh;
+  align-items: center;
   text-align: center;
 }
 
-.page-title {
-  margin: 0 0 8px;
-  font-size: 2rem;
-  color: var(--color-primary);
+.page-footer {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
 }
 
-.page-lead {
-  margin: 0;
-  font-size: 1rem;
-}
-
-.page-note {
-  margin-top: 24px;
-  font-size: 0.75rem;
+.section-title {
+  font-size: 0.875rem;
+  font-weight: 700;
   color: var(--color-text-sub);
+  letter-spacing: 0.04em;
 }
 
-/* タブレット以上：コンテンツ幅を少し広げる */
+.muted {
+  color: var(--color-text-sub);
+  font-size: 0.875rem;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* タブレット以上：コンテンツ幅を広げ、文字を少し大きく */
 @media (min-width: 768px) {
   :root {
     --app-max-width: 640px;
+    font-size: 17px;
   }
 }
