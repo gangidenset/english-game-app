@@ -24,7 +24,7 @@ const CATEGORIES = Object.keys(CATEGORY_LABELS) as QuestionCategory[]
 
 /** 学習記録画面：累計の成績・分野別正答率・苦手問題・最近のバトル・データ管理。 */
 export function StatsPage({ onBack }: { onBack: () => void }) {
-  const { progress, resetProgress } = useProgress()
+  const { progress, resetProgress, updateSettings } = useProgress()
   const { stats } = progress
   const accuracy = getAccuracy(stats.answered, stats.correct)
   const weakList = Object.values(progress.weak)
@@ -111,6 +111,28 @@ export function StatsPage({ onBack }: { onBack: () => void }) {
               ))}
             </ul>
           )}
+        </Card>
+      </section>
+
+      <section className="stats__section">
+        <h2 className="section-title">設定</h2>
+        <Card className="settings">
+          <label className="toggle">
+            <span>🔊 効果音</span>
+            <input
+              type="checkbox"
+              checked={progress.settings.sound}
+              onChange={(e) => updateSettings({ sound: e.target.checked })}
+            />
+          </label>
+          <label className="toggle">
+            <span>📳 バイブレーション</span>
+            <input
+              type="checkbox"
+              checked={progress.settings.vibration}
+              onChange={(e) => updateSettings({ vibration: e.target.checked })}
+            />
+          </label>
         </Card>
       </section>
 

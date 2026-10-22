@@ -16,9 +16,11 @@ import {
 } from '../game/battleReducer'
 import { comboMultiplier } from '../game/scoring'
 import { useCountdown } from '../hooks/useCountdown'
+import { feedback } from '../services/feedbackService'
 import { loadAllQuestions, selectQuestions } from '../services/questionService'
 import { buildBattleResult, type BattleResult } from '../game/result'
 import type { BattleConfig } from '../types/battle'
+import type { PlayerSettings } from '../types/progress'
 import { CATEGORY_LABELS, type BattleQuestion } from '../types/question'
 
 interface Props {
@@ -68,6 +70,7 @@ export function BattlePage({ config, onFinish, onQuit }: Props) {
   return (
     <BattleRunner
       questions={questions}
+      settings={progress.settings}
       onFinish={(state, durationMs) => onFinish(buildBattleResult(state, config, durationMs))}
       onQuit={onQuit}
     />
@@ -76,10 +79,12 @@ export function BattlePage({ config, onFinish, onQuit }: Props) {
 
 function BattleRunner({
   questions,
+  settings,
   onFinish,
   onQuit,
 }: {
   questions: BattleQuestion[]
+  settings: PlayerSettings
   onFinish: (state: BattleState, durationMs: number) => void
   onQuit: () => void
 }) {
@@ -99,6 +104,12 @@ function BattleRunner({
     state.index,
     onExpire,
   )
+
+  // 回答したら効果音
+  useEffect(() => {
+    if (!answer) return
+    feedback(!answer.correct ? 'wrong' : answer.combo >= 3 ? 'combo' : 'correct', settings)
+  }, [answer, settings])
 
   // 正解なら自動で次へ。不正解は解説を読んでから「次へ」を押してもらう
   useEffect(() => {

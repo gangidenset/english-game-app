@@ -1,8 +1,11 @@
+import { useEffect } from 'react'
+import { useProgress } from '../app/ProgressContext'
 import { Button } from '../components/Button'
 import { Card } from '../components/Card'
 import { RankBadge } from '../components/RankBadge'
 import { StatTile } from '../components/StatTile'
 import { wrongAnswers, type BattleResult } from '../game/result'
+import { feedback } from '../services/feedbackService'
 import { missionTitle } from '../services/missionService'
 import type { BattleOutcome } from '../services/progressService'
 import { getLevelTitle } from '../utils/level'
@@ -26,6 +29,19 @@ const RANK_MESSAGES = {
 /** RESULT 画面：正解数・正答率・スコア・最大コンボ・ランク・獲得 XP。 */
 export function ResultPage({ result, outcome, onRetry, onReview, onHome }: Props) {
   const wrongCount = wrongAnswers(result).length
+  const { progress } = useProgress()
+  const leveledUp = outcome.levelAfter > outcome.levelBefore
+  const { settings } = progress
+
+  // 結果発表の効果音（画面を開いたときに一度だけ）
+  useEffect(() => {
+    feedback(result.cleared ? 'clear' : 'gameover', settings)
+    if (leveledUp) {
+      const t = setTimeout(() => feedback('levelup', settings), 700)
+      return () => clearTimeout(t)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- 設定変更では鳴らし直さない
+  }, [result])
 
   return (
     <main className="page result">
@@ -73,7 +89,7 @@ export function ResultPage({ result, outcome, onRetry, onReview, onHome }: Props
         </ul>
       </Card>
 
-      {outcome.levelAfter > outcome.levelBefore && (
+      {leveledUp && (
         <Card className="levelup" role="status">
           <p className="levelup__title">⬆️ LEVEL UP!</p>
           <p>
