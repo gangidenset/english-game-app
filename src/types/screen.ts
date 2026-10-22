@@ -1,6 +1,11 @@
+import type { BattleConfig } from './battle'
+
 /**
- * 画面遷移の単位。
- * HOME → BATTLE → RESULT → REVIEW の流れを想定。
- * 現時点では HOME のみ実装。
+ * 画面遷移の状態。
+ * HOME → BATTLE → RESULT → REVIEW の流れ（＋学習記録画面）。
+ * 結果データを持つ画面は、Phase 8 以降で項目を追加する。
  */
-export type Screen = 'home' | 'battle' | 'result' | 'review'
+export type Screen =
+  | { name: 'home' }
+  | { name: 'battle'; config: BattleConfig }
+  | { name: 'stats' }

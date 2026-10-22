@@ -1,0 +1,94 @@
+/* 画面ごとのスタイル（src/pages/*） */
+
+/* ---------- HOME ---------- */
+.player {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+.player__avatar {
+  flex: none;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-combo));
+  color: var(--color-on-primary);
+  font-size: 1.5rem;
+  font-weight: 900;
+  line-height: 1;
+}
+.player__lv {
+  font-size: 0.625rem;
+  font-weight: 800;
+}
+.player__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
+}
+.player__title {
+  font-weight: 800;
+  font-size: 1.125rem;
+}
+.player__xp {
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+}
+.player__xp .muted {
+  font-size: 0.75rem;
+}
+
+.missions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.missions__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.mission {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+.mission__icon {
+  font-size: 1.25rem;
+}
+.mission__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+.mission__title {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+.mission--done .mission__title {
+  color: var(--color-text-sub);
+  text-decoration: line-through;
+}
+.mission__reward {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.mission__reward small {
+  color: var(--color-xp);
+  font-size: 0.6875rem;
+}
+.home__version {
+  text-align: center;
+  font-size: 0.6875rem;
+}
