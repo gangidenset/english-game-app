@@ -1,0 +1,88 @@
+/*
+ * グローバルスタイル（スマートフォン最優先）。
+ * - 基本はスマホ縦画面で設計し、タブレット / PC はメディアクエリで広げる。
+ * - iPhone のノッチ・ホームバーを避けるため safe-area を考慮する。
+ */
+:root {
+  --color-bg: #0f0d2e;
+  --color-surface: #1e1b4b;
+  --color-primary: #facc15;
+  --color-text: #f8fafc;
+  --color-text-sub: #a5b4fc;
+  --radius: 16px;
+  --app-max-width: 480px;
+
+  color-scheme: dark;
+  font-family:
+    system-ui, -apple-system, 'Hiragino Sans', 'Noto Sans JP', 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-bg);
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+  min-height: 100dvh;
+}
+
+body {
+  overscroll-behavior: none;
+}
+
+button {
+  font: inherit;
+  touch-action: manipulation;
+}
+
+.app-shell {
+  width: 100%;
+  max-width: var(--app-max-width);
+  min-height: 100dvh;
+  margin: 0 auto;
+  padding: calc(16px + env(safe-area-inset-top)) calc(16px + env(safe-area-inset-right))
+    calc(16px + env(safe-area-inset-bottom)) calc(16px + env(safe-area-inset-left));
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70dvh;
+  text-align: center;
+}
+
+.page-title {
+  margin: 0 0 8px;
+  font-size: 2rem;
+  color: var(--color-primary);
+}
+
+.page-lead {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.page-note {
+  margin-top: 24px;
+  font-size: 0.75rem;
+  color: var(--color-text-sub);
+}
+
+/* タブレット以上：コンテンツ幅を少し広げる */
+@media (min-width: 768px) {
+  :root {
+    --app-max-width: 640px;
+  }
+}
