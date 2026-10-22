@@ -5,6 +5,7 @@ import { Card } from '../components/Card'
 import { ProgressBar } from '../components/ProgressBar'
 import { StatTile } from '../components/StatTile'
 import { TopBar } from '../components/TopBar'
+import { APP_CONFIG } from '../config/app'
 import { loadAllQuestions } from '../services/questionService'
 import { getAccuracy, getActiveStreak } from '../services/progressService'
 import type { BattleMode } from '../types/battle'
@@ -142,6 +143,12 @@ export function StatsPage({ onBack }: { onBack: () => void }) {
         <Button variant="danger" block onClick={reset}>
           学習データをリセット
         </Button>
+        <p className="stats__links muted">
+          <a href={APP_CONFIG.privacyPolicyUrl} target="_blank" rel="noopener noreferrer">
+            プライバシーポリシー
+          </a>
+          　v{APP_CONFIG.version}
+        </p>
       </section>
     </main>
   )

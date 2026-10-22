@@ -418,3 +418,9 @@
     margin-top: var(--space-5);
   }
 }
+.stats__links {
+  text-align: center;
+}
+.stats__links a {
+  color: var(--color-text-sub);
+}

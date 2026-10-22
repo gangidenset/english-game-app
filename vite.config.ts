@@ -1,6 +1,7 @@
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 import { VitePWA } from 'vite-plugin-pwa'
+import pkg from './package.json' with { type: 'json' }
 
 // base を相対パス './' にすることで、同じビルド成果物を
 //   - GitHub Pages（https://<user>.github.io/english-game-app/）
@@ -9,6 +10,9 @@ import { VitePWA } from 'vite-plugin-pwa'
 // https://vite.dev/config/
 export default defineConfig({
   base: './',
+  define: {
+    __APP_VERSION__: JSON.stringify(pkg.version),
+  },
   plugins: [
     react(),
     // PWA：manifest.webmanifest と Service Worker（sw.js）をビルド時に自動生成する
