@@ -4,6 +4,12 @@
  */
 export type QuestionCategory = 'vocabulary' | 'grammar' | 'phrases'
 
+export const CATEGORY_LABELS: Record<QuestionCategory, string> = {
+  vocabulary: '単語',
+  grammar: '文法',
+  phrases: '熟語・会話',
+}
+
 /** 1（易）〜 5（難）。高校入試の基礎〜応用を想定。 */
 export type Difficulty = 1 | 2 | 3 | 4 | 5
 
@@ -15,11 +21,18 @@ export interface Question {
   /** 問題文 */
   prompt: string
   /** 4 つの選択肢 */
-  choices: [string, string, string, string]
+  choices: string[]
   /** 正解の選択肢のインデックス（0〜3） */
-  answerIndex: 0 | 1 | 2 | 3
+  answerIndex: number
   /** 復習画面に表示する解説 */
   explanation: string
   /** 単元・テーマなどの自由タグ（例: ["過去形", "中2"]） */
   tags?: string[]
+}
+
+/** バトルで出題する形。選択肢の並び順を毎回シャッフルしたもの。 */
+export interface BattleQuestion {
+  source: Question
+  choices: string[]
+  answerIndex: number
 }

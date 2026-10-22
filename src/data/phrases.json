@@ -1,0 +1,12 @@
+[
+  {
+    "id": "phr-0001",
+    "category": "phrases",
+    "difficulty": 1,
+    "prompt": "I'm looking (   ) my key. 「かぎを探しています」",
+    "choices": ["for", "at", "after", "into"],
+    "answerIndex": 0,
+    "explanation": "look for ～ = ～を探す。look at は「～を見る」、look after は「～の世話をする」。",
+    "tags": ["熟語", "中1"]
+  }
+]

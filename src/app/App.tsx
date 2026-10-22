@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { BattlePage } from '../pages/BattlePage'
 import { HomePage } from '../pages/HomePage'
 import type { Screen } from '../types/screen'
 import { ProgressProvider } from './ProgressProvider'
@@ -20,7 +21,10 @@ export function App() {
             onOpenStats={() => setScreen({ name: 'stats' })}
           />
         )}
-        {screen.name !== 'home' && (
+        {screen.name === 'battle' && (
+          <BattlePage config={screen.config} onFinish={goHome} onQuit={goHome} />
+        )}
+        {screen.name === 'stats' && (
           <main className="page page--center">
             <p>準備中です</p>
             <button onClick={goHome}>ホームへ</button>

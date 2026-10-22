@@ -1,0 +1,12 @@
+[
+  {
+    "id": "gra-0001",
+    "category": "grammar",
+    "difficulty": 1,
+    "prompt": "My brother (   ) tennis every Sunday.",
+    "choices": ["plays", "play", "playing", "to play"],
+    "answerIndex": 0,
+    "explanation": "主語が三人称単数（My brother）で現在の習慣なので、動詞に -s をつけて plays。",
+    "tags": ["三単現", "中1"]
+  }
+]

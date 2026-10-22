@@ -1,0 +1,12 @@
+[
+  {
+    "id": "voc-0001",
+    "category": "vocabulary",
+    "difficulty": 1,
+    "prompt": "「図書館」を英語で言うと？",
+    "choices": ["library", "hospital", "station", "museum"],
+    "answerIndex": 0,
+    "explanation": "library = 図書館。hospital は病院、station は駅、museum は博物館。",
+    "tags": ["名詞", "中1"]
+  }
+]
