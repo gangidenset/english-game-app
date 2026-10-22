@@ -19,7 +19,7 @@ const png = (input, size) => sharp(Buffer.from(input)).resize(size, size).png().
 await sharp(await png(svg, 1024)).toFile('assets/icon-only.png')
 // アダプティブアイコンは中央 66% が安全領域なので、前景を縮めて余白をとる
 await sharp({ create: { width: 1024, height: 1024, channels: 4, background: { r: 0, g: 0, b: 0, alpha: 0 } } })
-  .composite([{ input: await png(foregroundSvg, 820), gravity: 'center' }])
+  .composite([{ input: await png(foregroundSvg, 700), gravity: 'center' }])
   .png()
   .toFile('assets/icon-foreground.png')
 await sharp(await png(backgroundSvg, 1024)).toFile('assets/icon-background.png')
